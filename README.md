@@ -1,7 +1,7 @@
-# Chet.Template.GUI
+# Chet.WebApi.Template.GUI
 
 ## 项目简介
-Chet.Template.GUI是一个基于ABP框架和WPF技术开发的图形用户界面工具，用于从GitHub下载模板代码，解压并替换其中的公司名和项目名，生成定制化的项目模板。
+Chet.WebApi.Template.GUI是一个基于ABP框架和WPF技术开发的图形用户界面工具，用于从GitHub下载模板代码，解压并替换其中的公司名和项目名，生成定制化的项目模板。
 
 ## 技术栈
 - **框架**：ABP VNext
@@ -13,12 +13,12 @@ Chet.Template.GUI是一个基于ABP框架和WPF技术开发的图形用户界面
 
 ## 项目结构
 ```
-Chet.Template.GUI
+Chet.WebApi.Template.GUI
 ├── src
-│   ├── Chet.Template.GUI                # GUI层（WPF应用）
-│   ├── Chet.Template.GUI.ApplicationService  # 应用服务层
-│   └── Chet.Template.GUI.Domain         # 领域层
-├── Chet.Template.GUI.sln                # 解决方案文件
+│   ├── Chet.WebApi.Template.GUI                # GUI层（WPF应用）
+│   ├── Chet.WebApi.Template.GUI.ApplicationService  # 应用服务层
+│   └── Chet.WebApi.Template.GUI.Domain         # 领域层
+├── Chet.WebApi.Template.GUI.sln                # 解决方案文件
 ├── common.props                         # 共享项目属性
 └── README.md                            # 项目说明文档
 ```
@@ -40,7 +40,7 @@ Chet.Template.GUI
 ## 使用指南
 
 ### 1. 运行应用程序
-直接运行`Chet.Template.GUI.exe`可执行文件。
+直接运行`Chet.WebApi.Template.GUI.exe`可执行文件。
 
 ### 2. 配置模板信息
 - **Source**：选择要使用的模板源（默认：Chet.Template）
@@ -93,4 +93,3 @@ Chet.Template.GUI
 
 ## 许可证
 本项目采用MIT许可证，详情请查看LICENSE文件。
-
