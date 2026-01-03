@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Chet.WebApi.Template.GUI.Domain\Chet.WebApi.Template.GUI.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
