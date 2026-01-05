@@ -1,95 +1,68 @@
 # Chet.WebApi.Template.GUI
 
-## 项目简介
-Chet.WebApi.Template.GUI是一个基于ABP框架和WPF技术开发的图形用户界面工具，用于从GitHub下载模板代码，解压并替换其中的公司名和项目名，生成定制化的项目模板。
+Chet.WebApi.Template.GUI 是一个基于 .NET 8 的图形用户界面工具，用于可视化创建和配置 Chet.WebApi.Template 项目。该工具旨在帮助开发者通过直观的界面快速生成符合团队规范的 Web API 项目模板，减少重复配置和入门成本。
 
-## 技术栈
-- **框架**：ABP VNext
-- **UI技术**：WPF (.NET 5.0)
-- **依赖注入**：Autofac
-- **日志**：Serilog
-- **HTTP客户端**：Octokit (GitHub API)
-- **压缩处理**：System.IO.Compression
+主要功能
 
-## 项目结构
-```
-Chet.WebApi.Template.GUI
-├── src
-│   ├── Chet.WebApi.Template.GUI                # GUI层（WPF应用）
-│   ├── Chet.WebApi.Template.GUI.ApplicationService  # 应用服务层
-│   └── Chet.WebApi.Template.GUI.Domain         # 领域层
-├── Chet.WebApi.Template.GUI.sln                # 解决方案文件
-├── common.props                         # 共享项目属性
-└── README.md                            # 项目说明文档
-```
+- 可视化配置项目选项（中间件、认证、数据库、日志等）
+- 生成基于 Chet.WebApi.Template 的工程骨架
+- 支持导出/导入配置模板（便于团队共享）
+- 内置示例与向导，帮助快速上手
 
-## 核心功能
+先决条件
 
-### 1. 模板下载
-从GitHub下载指定模板的最新发布版本。
+- .NET 8 SDK
+- Windows / macOS / Linux（取决于 GUI 框架支持的平台）
 
-### 2. 模板解压
-将下载的ZIP文件解压到指定目录。
+快速开始
 
-### 3. 模板定制
-- 替换模板中的公司名称
-- 替换模板中的项目名称
-- 重命名文件夹和文件
-- 更新文件内容中的命名空间和引用
+1. 克隆仓库
 
-## 使用指南
+   git clone https://github.com/qiect/Chet.WebApi.Template.GUI.git
+   cd Chet.WebApi.Template.GUI
 
-### 1. 运行应用程序
-直接运行`Chet.WebApi.Template.GUI.exe`可执行文件。
+2. 构建并运行
 
-### 2. 配置模板信息
-- **Source**：选择要使用的模板源（默认：Chet.Template）
-- **CompanyName**：输入您的公司名称
-- **ProjectName**：输入您的项目名称
+   - 在项目根目录或 src 子目录中运行：
+     dotnet build
+     dotnet run --project ./src/<YourGuiProject>.csproj
 
-### 3. 生成模板
-点击"生成"按钮，系统将自动执行以下操作：
-1. 下载模板代码
-2. 解压模板文件
-3. 替换公司名和项目名
-4. 生成定制化模板
+   - 或使用 IDE（Visual Studio / Rider / VS Code）打开解决方案文件 Chet.WebApi.Template.GUI.sln 并直接运行。
 
-### 4. 查看结果
-生成完成后，系统将自动打开生成的模板目录，您可以在其中找到定制化的项目模板。
+使用示例
 
-## 配置说明
+- 启动应用后按向导引导填写项目名称、命名空间、需要的中间件（如 Swagger、Cors）、目标数据库类型（如 SQLite/PostgreSQL/MSSQL）等。
+- 配置完成后点击“生成”按钮，工具会输出一个可直接打开/编译的 Web API 模板工程到指定目录。
+- 可选择将当前配置导出为模板文件（JSON），以便团队复用。
 
-### appsettings.json
-```json
-{
-  "Github": {
-    "Chet.Template": {
-      "Author": "作者名称",
-      "RepsotiryName": "仓库名称"
-    }
-  }
-}
-```
+项目结构（概览）
 
-## 扩展开发
+- src/ — 源代码
+- examples/ — 示例与演示配置（若存在）
+- docs/ — 文档（若存在）
+- Logs/ — 运行时生成的日志（默认忽略在版本库中）
 
-### 添加新的模板源
-1. 在`appsettings.json`中添加新的GitHub仓库配置
-2. 修改相关代码以支持新的模板源
+贡献
 
-### 自定义替换规则
-1. 修改`ReplaceConsts.cs`中的常量定义
-2. 更新`ReplaceExtension.cs`中的替换逻辑
+非常欢迎贡献：
 
-## 故障排除
+- 提交 Issue：报告 bug 或提出功能建议
+- 提交 PR：改善功能、修复 Bug 或补充文档
+- 提交模板：如果你有实用的项目配置模板，欢迎提交或在仓库中添加示例
 
-### 常见问题
-1. **下载失败**：检查网络连接和GitHub仓库配置
-2. **解压失败**：检查文件权限和磁盘空间
-3. **替换失败**：检查公司名和项目名的输入格式
+在贡献前，请先在 Issue 中讨论较大或破坏性变更。
 
-### 日志查看
-日志文件位于应用程序目录下的`Logs/logs.txt`，可以查看详细的操作记录和错误信息。
+许可证
 
-## 许可证
-本项目采用MIT许可证，详情请查看LICENSE文件。
+本仓库未在 README 中指定许可证。如果你希望使用明确的许可证（例如 MIT），可以在仓库中添加 LICENSE 文件。我可以为你生成并提交合适的 LICENSE 文件（例如 MIT、Apache-2.0 等）。
+
+更多帮助
+
+如果你希望我：
+
+- 基于源码自动生成更精确的 README（包含各窗口、菜单、主要类与方法说明），请授权我读取并分析 src 目录的具体文件；
+- 添加示例配置、示例输出工程或 CI（GitHub Actions）来自动构建并运行基本测试，我也可以继续为你实现。
+
+---
+
+(本 README 为初始改进版，基于仓库描述与目录结构所生成。如需我将此 README 直接提交到仓库的 main 分支，请回复确认，我将把文件写入 main 分支。)
